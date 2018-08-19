@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/master.css">
+    <meta charset="utf-8">
+    <title>TopSecret</title>
+  </head>
+  <ul>
+  <% if session[:user] == nil %>
+  <li> <a href="/login"> Log In </a></li>
+  <li> <a href="/signup"> Sign Up </a></li>
+  <% elsif session[:user] != nil %>
+  <li> <a href="/personal"><%= session[:user].name%></a></li>
+  <li> <a href="/feed">Your Feed</a></li>
+  <li> <a href="/logout">Log Out</a></li>
+</ul>
+<%end%>
+  <body>
+ <%= yield %>
+ <footer> <p>Created 2018 by Vents LLC</p> </footer>
+  </body>
+  <script src="/main.js">
+
+  </script>
+</html>

@@ -1,0 +1,5 @@
+<h2>User List(We may not need this actual page)</h2>
+<p>Total Users: <%=@users.count%></p>
+<% @users.each do |u| %>
+<p><%= u.first_name %></p>
+<% end %>

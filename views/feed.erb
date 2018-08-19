@@ -1,0 +1,10 @@
+<h2>Timeline</h2>
+
+<% @posts.each do |po| %>
+<div class="posts">
+  <h3><%= po.title %></h3>
+  <h4>Posted by: <%= po.belongs_to %></h4>
+ <p><%=  po.content %></p>
+ <img src="<%= po.image %>">
+ <%end%>
+<div>
