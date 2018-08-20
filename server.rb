@@ -51,13 +51,13 @@ post '/signup' do
     password: params["password"]
   )
   user.save
-  redirect "/personal"
+  redirect "/login"
 end
 
 
 
 get '/personal' do
-  # @user = User.find(params[:id])
+  # current_user = User.find(session[:id])
     erb :personal
 end
 
@@ -71,7 +71,7 @@ post '/feed' do
     post_title: params["title"],
     description: params["content"],
     image_url: params["imgurl"],
-    # belongs_to: session[:user]
+    owner: session[:user].name
   )
   url = "/feed"
   redirect url

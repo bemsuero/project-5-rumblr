@@ -6,11 +6,10 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       u.string :password_hash
       u.datetime :created_at
       u.datetime :updated_at
-      # u.has_many :posts
   end
 
   create_table :posts do |po|
-    # po.references :user
+    po.string :owner
     po.string :post_title
     po.string :description
     po.string :image_url

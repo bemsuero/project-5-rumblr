@@ -2,9 +2,9 @@
 
 <% @posts.each do |po| %>
 <div class="posts">
-  <h3><%= po.title %></h3>
-  <h4>Posted by: <%= po.belongs_to %></h4>
- <p><%=  po.content %></p>
- <img src="<%= po.image %>">
+  <h3><%= po.post_title %></h3>
+  <h3>Posted By: <%= po.owner %></h3>
+ <p><%=  po.description %></p>
+ <img src="<%= po.image_url %>">
  <%end%>
 <div>

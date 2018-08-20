@@ -1,0 +1,20 @@
+ #nav {
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+#nav i {
+color: white;
+font-size: 5vh;
+}
+
+#nav i:active {
+  background-color: gray;
+}
+
+#nav ul {
+ padding-left: 0;
+}

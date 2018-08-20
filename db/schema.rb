@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_08_16_212918) do
 
   create_table "posts", force: :cascade do |t|
+    t.string "owner"
     t.string "post_title"
     t.string "description"
     t.string "image_url"
