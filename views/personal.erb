@@ -1,20 +1,28 @@
+<div class="personalGrid">
+
+
+<section id="personalHeader">
 <h2>Personal Page</h2>
-<h3> Welcome <%= session[:user].user_name%> </h3>
+<h3> Welcome <%= session[:user].user_name.capitalize%> </h3>
+</section>
 
 <div id="userInfo">
-<p> <%= session[:user].first_name%> </p>
-<p> <%= session[:user].last_name%> </p>
-<p> <%= session[:user].email%> </p>
-<p> <%= session[:user].birthdate%> </p>
+<p> First Name: <%= session[:user].first_name%> </p>
+<p> Last Name: <%= session[:user].last_name%> </p>
+<p> Email: <%= session[:user].email%> </p>
+<p> Birthdate: <%= session[:user].birthdate%> </p>
 </div>
 
-<div id="postCreater">
+<div id="postCreator">
+  <p>Post Creator</p>
   <form action="/feed" method="POST">
     <input type="text" name="title" placeholder="Title"><br>
-    <input type="text" name="content" placeholder="Your Content"><br>
+    <input id="contentBox" type="text" name="content" placeholder="Your Content"><br>
     <input type="text" name="imgurl" placeholder="Image Url"><br>
     <input type="submit" value="Submit Post">
   </form>
 </div>
 
 <a href="/deleteaccount"> <button id="deleteButton"> This Button Will Delete You From Our System.</button></a>
+
+</div>

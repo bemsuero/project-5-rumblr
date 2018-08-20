@@ -72,7 +72,7 @@ end
 
 get '/personal/:id' do
   @personal = User.find(params[:id])
-  erb :personal, :layout => :layout
+  erb :personal
 end
 
 get '/deleteaccount' do
