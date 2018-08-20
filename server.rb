@@ -46,6 +46,7 @@ get '/signup' do
 end
 
 post '/signup' do
+
   p params
   user = User.new(
     email: params["email"],
@@ -57,7 +58,13 @@ post '/signup' do
   )
   user.save
   redirect "/login"
+
+  rescue ActiveRecord::RecordNotUnique
+  p "Username Or Email Not Unique"
+  redirect "/signup"
+
 end
+
 
 get '/personal' do
   erb :personal
@@ -72,7 +79,7 @@ get '/deleteaccount' do
   current_user = User.find(session[:user].id)
   current_user.destroy
   p "Current User Deleted"
-  redirect "/login"
+  redirect "/logout"
 end
 
 get '/feed' do

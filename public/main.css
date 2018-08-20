@@ -35,8 +35,14 @@ footer {
   text-indent: 5%;
 }
 
-#mainContent {
+html {
   padding: 1%;
+  background-color: rgb(186,173,255);
+  color: rgb(62,51,255);
+}
+html a {
+  text-decoration: none;
+  color: rgb(250,39,66);
 }
 
 .feedGrid {
