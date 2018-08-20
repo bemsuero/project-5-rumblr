@@ -16,7 +16,7 @@ end
 
 post '/login' do
 email = params[:email]
-given_password = params[:password]
+given_password = params[:log_in_password]
 # p email
 # p password
 #check to see if email (or username) exists and check to see if the email has a password that matches the form password. if they match, log in the user.
@@ -26,7 +26,9 @@ if user == nil
 else
 if user.password == given_password
 session[:user] = user
-redirect "/personal"
+# redirect '/personal'
+url = "/personal/" + user.id.to_s
+redirect url
 else
   p "Invalid Credentials"
   redirect "/login"
@@ -47,35 +49,63 @@ post '/signup' do
   p params
   user = User.new(
     email: params["email"],
-    name: params["name"],
-    password: params["password"]
+    first_name: params["first_name"],
+    last_name: params["last_name"],
+    user_name: params["user_name"],
+    password: params["password"],
+    birthdate: params["birthdate"]
   )
   user.save
   redirect "/login"
 end
 
-
-
 get '/personal' do
-  # current_user = User.find(session[:id])
-    erb :personal
+  erb :personal
+end
+
+get '/personal/:id' do
+  @personal = User.find(params[:id])
+  erb :personal, :layout => :layout
+end
+
+get '/deleteaccount' do
+  current_user = User.find(session[:user].id)
+  current_user.destroy
+  p "Current User Deleted"
+  redirect "/login"
 end
 
 get '/feed' do
   @posts = Post.all
   erb :feed
 end
-
 post '/feed' do
   post = Post.create(
     post_title: params["title"],
     description: params["content"],
     image_url: params["imgurl"],
-    owner: session[:user].name
+    owner: session[:user].user_name
   )
   url = "/feed"
   redirect url
 end
+
+get '/personalposts' do
+  @myposts = Post.select {
+    |x| x.owner == session[:user].user_name
+  }
+  erb :personalposts
+end
+
+post '/postsearch' do
+  @username = params["usersearch"]
+  @userposts = Post.select {
+    |x| x.owner == "#{@username}"
+  }
+  erb :postsearch
+end
+
+
 
 # post '/allusers' do
 #   user = User.create(

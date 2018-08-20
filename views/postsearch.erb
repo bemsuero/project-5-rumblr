@@ -1,0 +1,10 @@
+<div class="feedGrid">
+<% @userposts.first(20).each do |po| %>
+<div class="posts">
+  <h3><%= po.post_title %></h3>
+  <h3>Posted By: <%= po.owner %></h3>
+ <p><%=  po.description %></p>
+ <img src="<%= po.image_url %>">
+ <%end%>
+<div>
+</div>

@@ -1,8 +1,16 @@
+<div class="signInForms">
+
 <h2>Sign Up</h2>
 <form action="/signup" method="post">
-  <input type="text" placeholder="Username" name="name"><br>
-  <input type="email" name="email" placeholder="Email"><br>
-  <input type="password" name="password" placeholder="Create A Password"><br>
+  <input type="text" placeholder="First Name" name="first_name" required><br>
+  <input type="text" placeholder="Last Name" name="last_name" required><br>
+  <input type="text" placeholder="Username" name="user_name" required><br>
+  <input type="email" name="email" placeholder="Email" required><br>
+  <input type="date" name="birthdate" required><br>
+  <input id="password" type="password" name="password" placeholder="Create A Password" required><br>
+  <input id="confirmPassword" type="password" name="password" placeholder="Confirm Password" required><br>
   <input type="submit" value="Sign Up">
 </form>
 <p>Already have an account? Click <a href="/login"> here </a> to log in. </p>
+
+</div>

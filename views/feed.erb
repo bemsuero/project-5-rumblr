@@ -1,5 +1,12 @@
-<h2>Timeline</h2>
 
+<div class="feedGrid">
+
+<h2>Timeline</h2>
+<p>Looking for someone's post?</p>
+<form action="/postsearch" method="POST">
+  <input type="search" name="usersearch">
+  <input type="submit" value="Search">
+</form>
 <% @posts.each do |po| %>
 <div class="posts">
   <h3><%= po.post_title %></h3>
@@ -8,3 +15,4 @@
  <img src="<%= po.image_url %>">
  <%end%>
 <div>
+</div>

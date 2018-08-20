@@ -1,20 +1,45 @@
+:root {
+--inactive:  rgb(87,87,87);
+}
+
  #nav {
   background-color: black;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   height: 100%;
+  padding-right: 2%;
 }
 
 #nav i {
-color: white;
-font-size: 5vh;
+  color: var(--inactive);
+  font-size: 5vh;
+  margin-bottom: 1%;
 }
 
-#nav i:active {
-  background-color: gray;
+#nav i:hover {
+    color: white;
 }
 
 #nav ul {
- padding-left: 0;
+  list-style-type: none;
+}
+
+footer {
+  color: var(--inactive);
+  background-color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-indent: 5%;
+}
+
+#mainContent {
+  padding: 1%;
+}
+
+.feedGrid {
+display: grid;
+
 }
