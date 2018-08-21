@@ -145,4 +145,8 @@ get '/allusers' do
   erb :allusers
 end
 
+get '/passcode' do
+ erb :passcode
+end
+
 require "./models"
