@@ -4,7 +4,11 @@ require "sinatra/activerecord"
 require "rack-flash"
 enable :sessions
 
-set :database, "sqlite3:project5.sqlite3"
+
+require "active_record"
+# set :database, "sqlite3:project5.sqlite3"
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+# THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
   redirect "/login"
@@ -60,9 +64,9 @@ post '/signup' do
   user.save
   redirect "/login"
 
-  rescue ActiveRecord::RecordNotUnique
-  p "Username Or Email Not Unique"
-  redirect "/signup"
+  # rescue ActiveRecord::RecordNotUnique
+  # p "Username Or Email Not Unique"
+  # redirect "/signup"
 
 end
 
