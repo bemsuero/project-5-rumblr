@@ -1,0 +1,18 @@
+<div class="signInForms">
+
+
+<h2>Settings</h2>
+<div class="formBox">
+  <form action="/settings/<%= @current_user.id %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <label>Confirm Username</label>
+    <input type="text" placeholder="Username" name="user_name" required><br>
+    <input type="text" name="image" placeholder="New Picture URL" required><br>
+    <input type="submit" value="Submit">
+    <p>Changes applied next time you log in.</p>
+  </form>
+  <a href="/deleteaccount"> <button id="deleteButton"> This Button Will Delete You From Our System.</button></a>
+</div>
+
+
+</div>

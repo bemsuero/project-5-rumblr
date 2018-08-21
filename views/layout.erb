@@ -7,13 +7,13 @@
     <meta charset="utf-8">
     <title>TopSecret</title>
   </head>
-    <body>
+    <body onload="disable()">
 
-<section class="hide" id="nav">
+<section id="nav">
   <ul>
   <% if session[:user] == nil %>
-  <li> <a href="/login" title="Log In"><i class="fas fa-sign-in-alt"></i></a></li><br>
-  <li> <a href="/signup" title="Sign Up"><i class="fas fa-user-plus"></i></a></li><br>
+  <li> <a href="/login" title="Log In" id="loginBtn"><i class="fas fa-sign-in-alt"></i></a></li><br>
+  <li> <a href="/signup" title="Sign Up" id="signupBtn"><i class="fas fa-user-plus"></i></a></li><br>
   <% elsif session[:user] != nil %>
   <li> <a href="/personal/<%=session[:user].id%>" title="<%= session[:user].user_name.capitalize%>'s Session"><i class="fas fa-user-circle"></i></a></li><br>
   <li> <a href="/feed" title="Your Timeline"><i class="fas fa-users"></i></a></li><br>
@@ -25,7 +25,7 @@
 <section id="mainContent">
  <%= yield %>
 </section>
- <footer class="hide"> <p>Created 2018 by Vents LLC</p> </footer>
+ <footer> <p>Created 2018 by Vents LLC</p> </footer>
   </body>
   <script src="/main.js">
 

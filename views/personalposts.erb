@@ -3,12 +3,13 @@
 <h2>My Posts</h2>
 </div>
 
-<% @myposts.first(20).each do |po| %>
+<% @myposts.first(20).reverse.each do |po| po.created_at %>
 <div class="feedGrid-rows">
   <h3><%= po.post_title %></h3>
   <h3>Posted By: <%= po.owner.capitalize %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">
+ <a href="/deletepost/<%= po.id %>"> <button id="deleteButton"> Delete this post.</button></a>
 </div>
  <%end%>
 </div>

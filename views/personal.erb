@@ -11,12 +11,8 @@
 <h3>  <%= session[:user].first_name.capitalize%> <%= session[:user].last_name.capitalize%> </h3>
 <p> <i class="fas fa-envelope-square"></i> <%= session[:user].email%> </p>
 <p> <i class="fas fa-birthday-cake"></i> <%= session[:user].birthdate%> </p>
-<form action="/personal/<%= @current_user.id %>" method="POST">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="image" placeholder="New Profile URL">
-  <p>Changes applied next time you log in.</p>
-  <input type="submit" value="Submit">
-</form>
+<a href="/settings"> <button> Settings</button></a>
+
 </div>
 
 <div id="postCreator">
@@ -28,7 +24,5 @@
     <input type="submit" value="Submit Post">
   </form>
 </div>
-
-<a href="/deleteaccount"> <button id="deleteButton"> This Button Will Delete You From Our System.</button></a>
 
 </div>

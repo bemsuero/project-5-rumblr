@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_08_16_212918) do
     t.string "post_title"
     t.string "description"
     t.string "image_url"
+    t.datetime "created_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -11,7 +11,7 @@
 
 
 
-<% @posts.each do |po| %>
+<% @posts.reverse.each do |po| %>
 <div class="feedGrid-rows">
   <h3><%= po.post_title %></h3>
   <h3>Posted By: <%= po.owner.capitalize %></h3>

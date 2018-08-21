@@ -3,19 +3,27 @@ console.log("Everything is in control.")
 
 // passcode
 
+function disable() {
+  document.getElementById('loginBtn').disabled = true;
+  document.getElementById('signupBtn').disabled = true;
+  document.getElementById('enter').disabled = true;
+}
+
+document.ge
 var passfield = document.getElementById('passField');
 passfield.innerHTML = "Enter Passcode";
 
-var nav = document.getElementById('nav')
+var nav = document.getElementById("nav")
+var footer = document.getElementById("footer")
 
 function clearField() {
   passfield.innerHTML = "Enter Passcode";
 }
 
-function submitField() {
+function enterField() {
   if (passfield.innerHTML == "616") {
-    nav.classList.add("reveal");
-    nav.classList.remove("hide");
+    document.getElementById('enter').disabled = false;
+    passfield.innerHTML = "Come on in.";
   }
   else {
     passfield.innerHTML = "Wrong Password, Avenger"
@@ -23,7 +31,7 @@ function submitField() {
 }
 
 function update(x) {
-  if (passfield.innerHTML == "Enter Passcode") {
+  if (passfield.innerHTML == "Enter Passcode" || passfield.innerHTML == "Wrong Password, Avenger") {
     passfield.innerHTML = "";
     var textnode = document.createTextNode(x)
     passfield.appendChild(textnode)

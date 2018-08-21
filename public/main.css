@@ -34,6 +34,14 @@ html a {
   margin-bottom: 1%;
 }
 
+#nav button {
+  color: var(--inactive);
+  font-size: 5vh;
+  margin-bottom: 1%;
+    background-color: black;
+    border-width: 0;
+}
+
 #nav i:hover {
   color: white;
 }
@@ -43,7 +51,7 @@ html a {
 }
 
 #mainContent {
-  padding-bottom: 10%;
+  padding-bottom: 15%;
 }
 
 /* Personal Page */
@@ -106,7 +114,6 @@ color: white;
 .personalGrid a {
   grid-row: 3 / 4;
   grid-column: 1 / 2;
-  margin-top: %;
 }
 
 #postCreator input[type="submit"] {
@@ -198,7 +205,7 @@ color: white;
   background-color: var(--background);
   box-shadow: var(--shadow);
   padding-left: 12%;
-  padding-top: 12%;
+  padding-top: 6%;
 }
 
 
@@ -219,14 +226,6 @@ footer {
 }
 
 /* Passcode Screen lololol. I don't know if I can make this work the way I want it to. */
-
-.hide {
-  visibility: hidden;
-}
-
-.reveal {
-  visibility: visible;
-}
 
 #container {
   display: grid;
@@ -258,14 +257,16 @@ footer {
   box-shadow: var(--introshadow);
 }
 
-#passcode form div {
-  color: white;
-}
-
 #passcode button {
   color: gold;
   background-color: black;
   font-size: 2vh;
+}
+
+#passcode input {
+  color: gold;
+  background-color: black;
+  font-size: 1.75vh;
 }
 
 #passField {
@@ -341,7 +342,7 @@ footer {
   /* grid-column: 2 / 3; */
 }
 
-#submit {
+#enter {
   grid-area: smt;
   /* grid-row: 4 / 5 ; */
   /* grid-column: 3 / 4; */

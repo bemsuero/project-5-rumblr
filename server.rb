@@ -10,7 +10,7 @@ set :database, "sqlite3:project5.sqlite3"
 # THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
-  redirect "/login"
+  redirect "/passcode"
 end
 
 get '/login' do
@@ -76,23 +76,37 @@ end
 
 get '/personal/:id' do
   @personal = User.find(params[:id])
-  @current_user = User.find(session[:user].id)
   erb :personal
 end
 
-put "/personal/:id" do
+get '/settings' do
+    @current_user = User.find(session[:user].id)
+  erb :settings
+end
+
+put '/settings/:id' do
   @current_user = User.find(session[:user].id)
   @current_user.image_url = params["image"]
+  @current_user.user_name = params["user_name"]
   @current_user.save
-  p "Profile Image Changed"
+  p "Changes Saved"
   redirect to "/personal/#{@current_user.id}"
 end
+
+
 
 get '/deleteaccount' do
   current_user = User.find(session[:user].id)
   current_user.destroy
   p "Current User Deleted"
   redirect "/logout"
+end
+
+get '/deletepost/:id' do
+  current_post = Post.find(params[:id])
+  current_post.destroy
+  p "Post Deleted"
+  redirect "/personal"
 end
 
 get '/feed' do

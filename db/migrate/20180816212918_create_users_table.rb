@@ -18,6 +18,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
     po.string :post_title
     po.string :description
     po.string :image_url
+    po.datetime :created_at
   end
 
   add_index :users, :email, unique: true

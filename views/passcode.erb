@@ -1,8 +1,9 @@
+
+
 <div id="container">
 
-
-<form id="passcode" method="get">
-  <div id="passField">XXXXXXXX</div>
+<form id="passcode" action="/login" method="get">
+  <div id="passField"></div>
   <button type="button" onclick="update(1)" class="btns" id="one">1</button>
   <button type="button" onclick="update(2)" class="btns" id="two">2</button>
   <button type="button" onclick="update(3)" class="btns" id="three">3</button>
@@ -13,8 +14,8 @@
   <button type="button" onclick="update(8)" class="btns" id="eight">8</button>
   <button type="button" onclick="update(9)" class="btns" id="nine">9</button>
   <button type="button" onclick="update(0)" class="btns" id="zero">0</button>
-  <button type="button" onclick="clearField()" class="btns" id="clear">Clear</button>
-  <button id="submit" onclick="submitField()" class="btns">Enter</button>
+  <button type="button" onclick="enterField()" class="btns" id="clear">Check Code</button>
+  <input id="enter" type="submit" class="btns" value="Enter Site"></input>
 </form>
 
 
