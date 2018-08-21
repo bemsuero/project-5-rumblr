@@ -3,6 +3,9 @@
 
 <h2>Welcome to TopSecret</h2>
 <div class="formBox">
+<% if session[:user] != nil %>
+<h3>You're Already Logged In <%=session[:user].user_name.capitalize%>!</h3>
+  <% elsif session[:user] == nil %>
   <form action="/login" method="post">
     <input type="text" name="email" placeholder="Email" required><br>
     <input type="password" name="log_in_password" placeholder="Password" required><br>
@@ -10,6 +13,6 @@
   </form>
   <p>New to the team? Click <a href="/signup"> here </a> to sign up. </p>
 </div>
-
+<%end%>
 
 </div>

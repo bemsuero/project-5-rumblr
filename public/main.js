@@ -4,12 +4,12 @@ console.log("Everything is in control.")
 // passcode
 
 function disable() {
-  document.getElementById('loginBtn').disabled = true;
-  document.getElementById('signupBtn').disabled = true;
+  // document.getElementById('loginBtn').disabled = true;
+  // document.getElementById('signupBtn').disabled = true;
   document.getElementById('enter').disabled = true;
 }
 
-document.ge
+
 var passfield = document.getElementById('passField');
 passfield.innerHTML = "Enter Passcode";
 

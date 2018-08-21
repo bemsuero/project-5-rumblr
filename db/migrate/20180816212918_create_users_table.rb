@@ -10,6 +10,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       u.string :password_hash
       u.datetime :created_at
       u.datetime :updated_at
+      u.string :description
 
   end
 

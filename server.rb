@@ -4,9 +4,9 @@ require "sinatra/activerecord"
 enable :sessions
 
 
-require "active_record"
-# set :database, "sqlite3:project5.sqlite3"
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+# require "active_record"
+set :database, "sqlite3:project5.sqlite3"
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 # THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
@@ -58,7 +58,8 @@ post '/signup' do
     user_name: params["user_name"],
     password: params["password"],
     birthdate: params["birthdate"],
-    image_url: "/default_logo.png"
+    image_url: "/default_logo.png",
+    description: "Add a description through the settings!"
   )
   user.save
   redirect "/login"
@@ -88,6 +89,7 @@ put '/settings/:id' do
   @current_user = User.find(session[:user].id)
   @current_user.image_url = params["image"]
   @current_user.user_name = params["user_name"]
+  @current_user.description = params["description"]
   @current_user.save
   p "Changes Saved"
   redirect to "/personal/#{@current_user.id}"
