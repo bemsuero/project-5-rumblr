@@ -1,17 +1,23 @@
+<div class="feedGrid-columns">
 
-<div class="feedGrid">
+<section class="feedHeader">
 <h2>Timeline</h2>
-<p>Looking for someone's post?</p>
 <form action="/postsearch" method="POST">
+  <p>Looking for someone's post?</p>
   <input type="search" name="usersearch">
   <input type="submit" value="Search">
 </form>
+</section>
+
+
+
 <% @posts.each do |po| %>
-<div class="posts">
+<div class="feedGrid-rows">
   <h3><%= po.post_title %></h3>
-  <h3>Posted By: <%= po.owner %></h3>
+  <h3>Posted By: <%= po.owner.capitalize %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">
- <%end%>
-<div>
+</div>
+<%end%>
+
 </div>

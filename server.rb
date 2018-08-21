@@ -1,8 +1,8 @@
 require "sinatra"
 require "faker"
 require "sinatra/activerecord"
+require "rack-flash"
 enable :sessions
-
 
 set :database, "sqlite3:project5.sqlite3"
 
@@ -54,7 +54,8 @@ post '/signup' do
     last_name: params["last_name"],
     user_name: params["user_name"],
     password: params["password"],
-    birthdate: params["birthdate"]
+    birthdate: params["birthdate"],
+    image_url: "/default_logo.png"
   )
   user.save
   redirect "/login"
@@ -72,7 +73,16 @@ end
 
 get '/personal/:id' do
   @personal = User.find(params[:id])
+  @current_user = User.find(session[:user].id)
   erb :personal
+end
+
+put "/personal/:id" do
+  @current_user = User.find(session[:user].id)
+  @current_user.image_url = params["image"]
+  @current_user.save
+  p "Profile Image Changed"
+  redirect to "/personal/#{@current_user.id}"
 end
 
 get '/deleteaccount' do

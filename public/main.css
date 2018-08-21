@@ -1,6 +1,7 @@
 :root {
 --inactive:  rgb(87,87,87);
---background: rgba(186, 58, 255, 0.8)
+--background: rgba(186, 58, 255, 0.8);
+--shadow: 4px 4px 8px rgb(229,165, 255);
 }
 
  #nav {
@@ -48,41 +49,48 @@ html a {
   color: rgb(250,39,66);
 }
 
-.feedGrid {
-display: grid;
-
+#mainContent {
+  padding-bottom: 2%;
 }
+
 /* Personal Page */
 .personalGrid {
   display: grid;
-  grid-template: 15% 80% 5% / 45% 45%;
+  grid-template: 15% 70% 15% / 45% 45%;
   grid-gap: 2%;
 }
 
 #personalHeader {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  border: 2px black solid;
   text-align: center;
   background-color: var(--background);
+  box-shadow: var(--shadow);
 }
 
 #userInfo {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
-  border: 2px black solid;
   height: 40vh;
   padding-left: 1%;
   height: inherit;
   background-color: var(--background);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding-top: 5%;
+}
+
+#userInfo img {
+  border: 2px solid black;
+  width: 20%;
 }
 
 #postCreator {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
-  border: 2px black solid;
   padding-left: 1%;
   background-color: var(--background);
+  box-shadow: var(--shadow);
 }
 
 #postCreator p {
@@ -92,7 +100,7 @@ display: grid;
 .personalGrid a {
   grid-row: 3 / 4;
   grid-column: 1 / 2;
-  margin-top: 30%;
+  margin-top: %;
 }
 
 #postCreator input[type="submit"] {
@@ -100,6 +108,7 @@ position: relative;
 left: 80%;
 margin-bottom: 1%;
 }
+
 #postCreator input[type="text"] {
 margin-bottom: 2%;
 margin-top: 2%;
@@ -109,4 +118,69 @@ font-size: 2vh;
 #contentBox {
   height: 40vh;
   width: 40vw;
+}
+
+/* Feed Pages */
+
+.feedGrid-columns {
+display: grid;
+grid-template-columns: 45% 45%;
+grid-gap: 4%;
+margin-right: 4%;
+}
+
+.feedGrid-rows {
+display: grid;
+width: 100%;
+grid-template-rows: auto;
+padding-left: 2%;
+padding-bottom: 2%;
+background-color: var(--background);
+box-shadow: var(--shadow);
+}
+
+.feedGrid-rows img {
+  width: 50%;
+}
+
+.feedHeader {
+  grid-column: 1 / 3;
+  width: 100%;
+  padding-bottom: 2%;
+  margin-right: 2%;
+  padding-left: 1%;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+    text-align: center;
+}
+
+
+/* Form Pages */
+
+.signInForms {
+ display: grid;
+ grid-template: 17vh 47vh 22vh / 28% 32% 12%;
+}
+
+.signInForms h2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding-top: 7%;
+}
+
+.formBox {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  padding-left: 12%;
+  padding-top: 12%;
+}
+
+.formBox input {
+  border: 2px solid rgb(192,27,51);
+margin-bottom: 1.5%;
 }

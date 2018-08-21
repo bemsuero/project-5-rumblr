@@ -7,17 +7,23 @@
 </section>
 
 <div id="userInfo">
-<p> First Name: <%= session[:user].first_name%> </p>
-<p> Last Name: <%= session[:user].last_name%> </p>
-<p> Email: <%= session[:user].email%> </p>
-<p> Birthdate: <%= session[:user].birthdate%> </p>
+<img src="<%=session[:user].image_url%>">
+<h3>  <%= session[:user].first_name.capitalize%> <%= session[:user].last_name.capitalize%> </h3>
+<p> <i class="fas fa-envelope-square"></i> <%= session[:user].email%> </p>
+<p> <i class="fas fa-birthday-cake"></i> <%= session[:user].birthdate%> </p>
+<form action="/personal/<%= @current_user.id %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="image" placeholder="New Profile Image">
+  <p>Changes applied next time you log in.</p>
+  <input type="submit" value="Submit">
+</form>
 </div>
 
 <div id="postCreator">
   <p>Post Creator</p>
   <form action="/feed" method="POST">
-    <input type="text" name="title" placeholder="Title"><br>
-    <input id="contentBox" type="text" name="content" placeholder="Your Content"><br>
+    <input type="text" name="title" placeholder="Title" required><br>
+    <input id="contentBox" type="text" name="content" placeholder="Your Content" required><br>
     <input type="text" name="imgurl" placeholder="Image Url"><br>
     <input type="submit" value="Submit Post">
   </form>

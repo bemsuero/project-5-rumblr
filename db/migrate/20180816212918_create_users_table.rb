@@ -6,9 +6,11 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       u.string :user_name
       u.string :email
       u.string :birthdate
+      u.string :image_url
       u.string :password_hash
       u.datetime :created_at
       u.datetime :updated_at
+
   end
 
   create_table :posts do |po|
