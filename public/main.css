@@ -178,9 +178,9 @@ box-shadow: var(--shadow);
   box-shadow: var(--shadow);
   padding-left: 12%;
   padding-top: 12%;
+  border: 2px solid rgb(192,27,51);
 }
 
 .formBox input {
-  border: 2px solid rgb(192,27,51);
 margin-bottom: 1.5%;
 }
