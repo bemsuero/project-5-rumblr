@@ -1,7 +1,6 @@
 require "sinatra"
 require "faker"
 require "sinatra/activerecord"
-require "rack-flash"
 enable :sessions
 
 
