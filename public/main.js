@@ -1,5 +1,7 @@
 console.log("Everything is in control.")
 
+// password verify
+
 var password = document.getElementById("password")
   , confirmPassword = document.getElementById("confirmPassword");
 
@@ -13,3 +15,6 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirmPassword.onkeyup = validatePassword;
+
+
+// passcode 

@@ -13,7 +13,7 @@
 <p> <i class="fas fa-birthday-cake"></i> <%= session[:user].birthdate%> </p>
 <form action="/personal/<%= @current_user.id %>" method="POST">
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="image" placeholder="New Profile Image">
+  <input type="text" name="image" placeholder="New Profile URL">
   <p>Changes applied next time you log in.</p>
   <input type="submit" value="Submit">
 </form>
