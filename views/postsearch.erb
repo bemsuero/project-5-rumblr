@@ -1,6 +1,11 @@
 <div class="feedGrid-columns">
 
   <div class="feedHeader">
+    <%if @username == "nutella" %>
+    <h2>This is just for you Michael</h2>
+  </div>
+  <img class="animated tada infinite" src="nutella.png">
+  <%end%>
 <%if @userposts.first == nil %>
 <h2>That user doesn't exist!</h2>
 </div>

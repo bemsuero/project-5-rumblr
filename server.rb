@@ -155,6 +155,7 @@ post '/postsearch' do
   @userposts = Post.select {
     |x| x.owner == "#{@username}"
   }
+  p @username
   erb :postsearch
 end
 
