@@ -15,6 +15,7 @@ GEM
     arel (9.0.0)
     bcrypt (3.1.12)
     concurrent-ruby (1.0.5)
+    curb (0.9.6)
     faker (1.9.1)
       i18n (>= 0.7)
     i18n (1.1.0)
@@ -46,6 +47,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt
+  curb
   faker
   pg
   rake

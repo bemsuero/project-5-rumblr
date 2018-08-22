@@ -1,20 +1,33 @@
 require "sinatra"
 require "faker"
 require "sinatra/activerecord"
+require "curb"
 enable :sessions
 
 
-require "active_record"
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
-# set :database, "sqlite3:project5.sqlite3"
+# require "active_record"
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+set :database, "sqlite3:project5.sqlite3"
 # THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
-  redirect "/passcode"
+  redirect "/login"
 end
 
 get '/login' do
 erb :login
+end
+
+get '/siteinfo' do
+erb :siteinfo
+end
+
+get '/supernews' do
+  @web_search = Curl::Easy.perform("https://www.eventbriteapi.com/v3/events/search/?q=super+hero&location.address=new+york&token=F33FG3NCO5EPWSKXWJXF")
+  @look_through = @web_search.body_str
+  @data = JSON.parse(@look_through)
+  @events = @data["events"]
+  erb :supernews
 end
 
 post '/login' do

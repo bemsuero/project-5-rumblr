@@ -1,11 +1,7 @@
 console.log("Everything is in control.")
-
-
 // passcode
 
 function disable() {
-  // document.getElementById('loginBtn').disabled = true;
-  // document.getElementById('signupBtn').disabled = true;
   document.getElementById('enter').disabled = true;
 }
 
@@ -29,7 +25,6 @@ function enterField() {
     passfield.innerHTML = "Wrong Password, Avenger"
   }
 }
-
 function update(x) {
   if (passfield.innerHTML == "Enter Passcode" || passfield.innerHTML == "Wrong Password, Avenger") {
     passfield.innerHTML = "";
@@ -41,9 +36,6 @@ function update(x) {
   passfield.appendChild(textnode)
 }
 }
-
-
-
 
 // password verify
 

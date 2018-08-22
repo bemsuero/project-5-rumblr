@@ -1,0 +1,27 @@
+<div class="feedGrid-columns">
+
+<div class="feedHeader">
+
+<h2>
+  Super Hero News!
+</h2>
+</div>
+
+<% @events.first(10).each do |event| %>
+<div class="feedGrid-rows">
+
+  <h3><%= event["name"]["text"] %></h3>
+  <img src='<%= event["logo"]["url"] %>'>
+  <p id="eventTime"><%= event["start"]["local"].byteslice(6) %>
+    /
+    <%= event["start"]["local"].byteslice(9) %>
+    /
+    <%= event["start"]["local"].byteslice(0..3) %>
+    at
+    <%= event["start"]["local"].byteslice(11..15) %></p>
+  <p><%= event["description"]["text"].slice(1..100) %>...</p>
+  <a href="<%=event['url']%>">Event Info</a>
+</div>
+<% end %>
+
+</div>
