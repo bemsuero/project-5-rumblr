@@ -14,12 +14,12 @@
 <h2>That user doesn't exist!</h2>
 </div>
 <%elsif @userposts.first != nil %>
-<h2>Posts by <%=@userposts.first.owner.capitalize%></h2>
+<h2>Posts by <%=@userposts.first.owner%></h2>
 </div>
 
-<% @userposts.first(20).each do |po| %>
+<% @userposts.first(20).reverse.each do |po| %>
 <div class="feedGrid-rows">
-  <h2>Posted By: <%= po.owner.capitalize %></h2>
+  <h2>Posted By: <%= po.owner %></h2>
   <h3><%= po.post_title %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">
