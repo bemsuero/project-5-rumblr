@@ -9,7 +9,7 @@
 <div id="userInfo">
 <img src="<%=session[:user].image_url%>">
 <h3>  <%= session[:user].first_name.capitalize%> <%= session[:user].last_name.capitalize%> </h3>
-<p> <i class="fas fa-envelope-square"></i> <%= session[:user].email%> </p>
+<p id="personalEmail"> <i class="fas fa-envelope-square"></i> <%= session[:user].email%> </p>
 <p> <i class="fas fa-birthday-cake"></i> <%= session[:user].birthdate%> </p>
 <p> <i class="fas fa-comment"></i> <%= session[:user].description%> </p>
 <a href="/settings"> <button> Settings</button></a>

@@ -4,27 +4,31 @@
   --shadow: 4px 4px 8px rgb(229, 165, 255);
   --backgroundImage:url("metalbackground.jpg");
   --introshadow: 4px 4px 8px black;
+  --linkColor: rgb(250, 39, 66);
+  --stanBorder: 2px solid black;
+  --textShadow: 2px 2px 8px black;
+  --font: 'Press Start 2P', cursive;
 }
 
 html {
   padding: 1%;
   color: rgb(16, 19, 121);
   background-image: url("bluebackground.jpg");
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font);
 }
 
 #searchBtn {
   text-decoration: none;
   font-size: 3vh;
   border: 0;
-  color: rgb(250, 39, 66);
+  color: var(--linkColor);
   background-color: rgba(87,87,87,0);
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font);
 }
 
 html a {
   text-decoration: none;
-  color: rgb(250, 39, 66);
+  color: var(--linkColor);
 }
 
 #nav {
@@ -83,9 +87,9 @@ padding-right: 0.1%;
   grid-column: 1 / 2;
   text-align: center;
   background-color: var(--background);
-color: white;
+  color: white;
   background-image: var(--backgroundImage);
-  text-shadow: 2px 2px 8px black;
+  text-shadow: var(--textShadow);
   background-repeat: repeat;
   background-size: cover;
   border-radius: 100px;
@@ -107,7 +111,7 @@ color: white;
 }
 
 #userInfo img {
-  border: 2px solid black;
+  border: var(--stanBorder);
   width: 20%;
 }
 
@@ -154,7 +158,7 @@ color: white;
 .feedGrid-columns {
   display: grid;
   grid-template-columns: 45% 45%;
-  grid-gap: 4%;
+  grid-gap: 1% 4%;
   margin-right: 4%;
 }
 
@@ -183,7 +187,7 @@ color: white;
   text-align: center;
   color: white;
   background-image: var(--backgroundImage);
-  text-shadow: 2px 2px 8px black;
+  text-shadow: var(--textShadow);
   background-repeat: repeat;
   background-size: cover;
   border-radius: 100px;
@@ -206,7 +210,7 @@ color: white;
   padding-top: 7%;
   color: white;
   background-image: var(--backgroundImage);
-  text-shadow: 2px 2px 8px black;
+  text-shadow: var(--textShadow);
   background-repeat: repeat;
   background-size:over;
   border-radius: 100px;
@@ -292,7 +296,7 @@ footer {
   margin-top: 15%;
   padding-top: 7%;
   padding-left: 9%;
-  border: 2px solid black;
+  border: var(--stanBorder);
   background-color: white;
   font-size: 1.5vh;
   /* grid-row: 1 / 2; */
@@ -370,3 +374,115 @@ footer {
   /* grid-row: 4 / 5 ; */
   /* grid-column: 4 / 5; */
 }
+
+
+ @media screen and (max-width: 375px) {
+
+   #mainContent {
+   padding-bottom: 0;
+ }
+
+.signInForms h2 {
+  font-size: 2vh;
+  padding-top: 20%;
+}
+.signInForms {
+grid-template: 18vh 60vh 25vh / 11% 59% 12%;
+}
+
+footer {
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 14%;
+    text-indent: 7%;
+    font-size: 2vh;
+}
+
+#nav ul {
+    text-indent: -45%;
+    padding-right: 17%;
+
+}
+
+.formBox input {
+    margin-bottom: 1.5%;
+    background-color: white;
+}
+
+.personalGrid {
+    display: grid;
+    grid-template: 15% 50% 30% / 68%;
+    grid-gap: 2%;
+}
+
+#postCreator input[type="submit"] {
+    position: relative;
+    left: 15%;
+    margin-bottom: 1%;
+    background-color: white;
+}
+
+#userInfo {
+font-size: 2vh;
+padding-left: 3%;
+padding-right: 3%;
+}
+
+#personalEmail {
+  display: none;
+}
+
+#postCreator {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    padding-left: 17%;
+  }
+
+  #contentBox {
+    height: 7vh;
+    width: 40vw;
+}
+
+.feedGrid-columns {
+    display: grid;
+    grid-template-columns: 80%;
+    grid-gap: 7%;
+    margin-right: 4%;
+}
+
+.feedHeader {
+    width: 63%;
+}
+
+input[type="search"] {
+background-color: white;
+}
+
+h2 {
+  display: none;
+}
+
+button {
+  background-color: white;
+}
+
+}
+
+ @media screen and (max-width: 376px) and (max-width: 768px) {
+ /* html {
+   opacity: 0.5;
+ } */
+ }
+
+ @media screen and (max-width: 789px) and (max-width: 1024px) {
+ /* html {
+   opacity: 0.5;
+ } */
+ }
+
+ @media screen and (max-width: 1025px) and (max-width: 1440px) {
+ /* html {
+   opacity: 0.5;
+ } */
+ }
