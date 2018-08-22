@@ -5,11 +5,11 @@ require "curb"
 enable :sessions
 
 #####HEROKU
-require "active_record"
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+# require "active_record"
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 #####LOCAL
-# set :database, "sqlite3:project5.sqlite3"
+set :database, "sqlite3:project5.sqlite3"
 # THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
@@ -22,14 +22,6 @@ end
 
 get '/siteinfo' do
 erb :siteinfo
-end
-
-get '/supernews' do
-  @web_search = Curl::Easy.perform("https://www.eventbriteapi.com/v3/events/search/?q=super+hero&location.address=new+york&token=F33FG3NCO5EPWSKXWJXF")
-  @look_through = @web_search.body_str
-  @data = JSON.parse(@look_through)
-  @events = @data["events"]
-  erb :supernews
 end
 
 post '/login' do
@@ -110,8 +102,6 @@ put '/settings/:id' do
   redirect to "/personal/#{@current_user.id}"
 end
 
-
-
 get '/deleteaccount' do
   current_user = User.find(session[:user].id)
   current_user.destroy
@@ -148,6 +138,18 @@ get '/personalposts' do
   erb :personalposts
 end
 
+get '/passcode' do
+ erb :passcode
+end
+
+get '/supernews' do
+  @web_search = Curl::Easy.perform("https://www.eventbriteapi.com/v3/events/search/?q=super+hero&location.address=new+york&token=F33FG3NCO5EPWSKXWJXF")
+  @look_through = @web_search.body_str
+  @data = JSON.parse(@look_through)
+  @events = @data["events"]
+  erb :supernews
+end
+
 post '/postsearch' do
   @username = params["usersearch"]
   @userposts = Post.select {
@@ -156,28 +158,23 @@ post '/postsearch' do
   erb :postsearch
 end
 
+# get '/userpost' do
+# erb :userpost
+# end
+#
+# post '/userpost' do
+#   @name = params["post_owner"]
+#   @select_posts = Post.select {
+#     |x| x.owner == "#{@name}"
+#   }
+#   erb :userpost
+# end
 
-
-# post '/allusers' do
-#   user = User.create(
-#     first_name: params["first_name"],
-#     last_name: params["last_name"],
-#     email: params["email"],
-#     birthdate: params["birthdate"],
-#     profile_num: SecureRandom.urlsafe_base64
-#   )
-#   url = "/personal/" + user.id.to_s
-#   redirect url
+# get '/allusers' do
+#   @users = User.all
+#   erb :allusers
 # end
 
 
-get '/allusers' do
-  @users = User.all
-  erb :allusers
-end
-
-get '/passcode' do
- erb :passcode
-end
 
 require "./models"

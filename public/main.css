@@ -13,6 +13,15 @@ html {
   font-family: 'Press Start 2P', cursive;
 }
 
+#searchBtn {
+  text-decoration: none;
+  font-size: 3vh;
+  border: 0;
+  color: rgb(250, 39, 66);
+  background-color: rgba(87,87,87,0);
+  font-family: 'Press Start 2P', cursive;
+}
+
 html a {
   text-decoration: none;
   color: rgb(250, 39, 66);

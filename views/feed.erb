@@ -13,7 +13,9 @@
 
 <% @posts.reverse.each do |po| %>
 <div class="feedGrid-rows">
-  <h3>Posted By: <%= po.owner.capitalize %></h3>
+  <form action="/postsearch" method="post">
+  <h3>Posted By: <input id="searchBtn" type="submit" name="usersearch" value="<%=po.owner%>"></h3>
+  </form>
   <h3><%= po.post_title %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">

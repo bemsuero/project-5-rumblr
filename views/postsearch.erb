@@ -1,6 +1,10 @@
 <div class="feedGrid-columns">
 
   <div class="feedHeader">
+<%if @userposts.first == nil %>
+<h2>That user doesn't exist!</h2>
+</div>
+<%elsif @userposts.first != nil %>
 <h2>Posts by <%=@userposts.first.owner.capitalize%></h2>
 </div>
 
@@ -13,3 +17,4 @@
 </div>
 <%end%>
 </div>
+<%end%>

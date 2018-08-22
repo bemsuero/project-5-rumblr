@@ -1,5 +1,12 @@
+<div class="signInForms">
+
 <h2>User List(We may not need this actual page)</h2>
+<div class="formBox">
 <p>Total Users: <%=@users.count%></p>
 <% @users.each do |u| %>
-<p><%= u.email %></p>
+<form action="/postsearch" method="post">
+<input id="searchBtn" type="submit" name="usersearch" value="<%=u.user_name%>">
+</form>
 <% end %>
+</div>
+</div>
