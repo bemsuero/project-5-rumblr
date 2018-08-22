@@ -5,9 +5,9 @@ require "curb"
 enable :sessions
 
 
-# require "active_record"
-# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
-set :database, "sqlite3:project5.sqlite3"
+require "active_record"
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+# set :database, "sqlite3:project5.sqlite3"
 # THIS IS A HEROKU SPECIFIC ERROR. you have to remember this somehow. or at least reference back to it.
 
 get '/' do
