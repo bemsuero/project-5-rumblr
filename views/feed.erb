@@ -17,6 +17,9 @@
   <h3>Posted By: <%= po.owner.capitalize %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">
+ <% if session[:user].email == "peterparker@dailyb.com" %>
+ <a href="/deletepost/<%= po.id %>"> <button id="deleteButton"> Delete this post.</button></a>
+ <%end%>
 </div>
 <%end%>
 
