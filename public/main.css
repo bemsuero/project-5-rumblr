@@ -234,6 +234,10 @@ padding-right: 0.1%;
   margin-bottom: 1.5%;
 }
 
+.formBox button {
+  position: relative;
+}
+
 footer {
   color: var(--inactive);
   background-color: black;
