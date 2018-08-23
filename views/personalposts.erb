@@ -14,7 +14,7 @@
 
 <% @myposts.first(20).reverse.each do |po| po.created_at %>
 <div class="feedGrid-rows">
-  <h3>Posted By: <%= po.owner %></h3>
+  <h3>Posted By: <%= po.owner.downcase %></h3>
   <h3><%= po.post_title %></h3>
  <p><%=  po.description %></p>
  <img src="<%= po.image_url %>">
