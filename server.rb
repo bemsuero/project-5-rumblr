@@ -125,7 +125,7 @@ post '/feed' do
     post_title: params["title"],
     description: params["content"],
     image_url: params["imgurl"],
-    owner: session[:user].user_name.downcase
+    owner: session[:user].user_name
   )
   url = "/feed"
   redirect url
@@ -152,7 +152,7 @@ get '/supernews' do
 end
 
 post '/postsearch' do
-  @username = params["usersearch"].downcase
+  @username = params["usersearch"]
   @userposts = Post.select {
     |x| x.owner == "#{@username}"
   }
