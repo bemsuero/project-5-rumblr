@@ -13,7 +13,7 @@
 <form action="/postsearch" method="POST">
   <p>Looking for someone's post?</p>
   <input type="search" name="usersearch" placeholder="Username (Case Sensative!)">
-  <input type="submit" value="Search">
+  <input id="searchSub"type="submit" value="Search">
 </form>
 </section>
 
@@ -29,9 +29,10 @@
  <img src="<%= po.image_url %>">
  <% if session[:user].email == "peterparker@dailyb.com" %>
  <a href="/deletepost/<%= po.id %>"> <button id="deleteButton"> Delete this post.</button></a>
- <%end%>
 </div>
 <%end%>
 <%end%>
 
 </div>
+
+<%end%>
