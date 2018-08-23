@@ -1,4 +1,11 @@
-
+<% if session[:user] == nil %>
+<div class="signInForms">
+<h2>404!</h2>
+<div class="formBox">
+  <p>I'm sorry but you will have to log in!</p>
+</div>
+</div>
+  <% elsif session[:user] != nil %>
 
 <div id="container">
 
@@ -20,3 +27,4 @@
 
 
 </div>
+<%end%>
