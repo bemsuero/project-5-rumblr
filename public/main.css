@@ -2,7 +2,7 @@
   --inactive: rgb(87, 87, 87);
   --background: rgba(186, 58, 255, 0.8);
   --shadow: 4px 4px 8px rgb(229, 165, 255);
-  --backgroundImage:url("metalbackground.jpg");
+  --backgroundImage: url("metalbackground.jpg");
   --introshadow: 4px 4px 8px black;
   --linkColor: rgb(250, 39, 66);
   --stanBorder: 2px solid black;
@@ -22,7 +22,7 @@ html {
   font-size: 3vh;
   border: 0;
   color: var(--linkColor);
-  background-color: rgba(87,87,87,0);
+  background-color: rgba(87, 87, 87, 0);
   font-family: var(--font);
 }
 
@@ -50,8 +50,8 @@ html a {
   color: var(--inactive);
   font-size: 5vh;
   margin-bottom: 1%;
-    background-color: black;
-    border-width: 0;
+  background-color: black;
+  border-width: 0;
 }
 
 #nav i:hover {
@@ -63,12 +63,10 @@ html a {
 }
 
 .btnText {
-font-size: 0.75vw;
-color: var(--inactive);
-padding-right: 0.1%;
+  font-size: 0.75vw;
+  color: var(--inactive);
+  padding-right: 0.1%;
 }
-
-
 
 #mainContent {
   padding-bottom: 100%;
@@ -155,6 +153,11 @@ padding-right: 0.1%;
 
 /* Feed Pages */
 
+section form input[type="search"] {
+  width: 33vh;
+  text-align: center;
+}
+
 .feedGrid-columns {
   display: grid;
   grid-template-columns: 45% 45%;
@@ -194,6 +197,47 @@ padding-right: 0.1%;
   width: 90%;
 }
 
+/* Events Page */
+
+.events-columns {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-gap: 1% 4%;
+  margin-right: 4%;
+}
+
+.events-rows {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+}
+
+.events-rows img {
+  width: 50%;
+}
+
+.eventsHeader {
+  grid-column: 1 / 3;
+  width: 100%;
+  padding-bottom: 2%;
+  margin-left: 5%;
+  padding-left: 1%;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  text-align: center;
+  color: white;
+  background-image: var(--backgroundImage);
+  text-shadow: var(--textShadow);
+  background-repeat: repeat;
+  background-size: cover;
+  border-radius: 100px;
+  width: 90%;
+}
+
 /* Form Pages */
 
 .signInForms {
@@ -212,7 +256,7 @@ padding-right: 0.1%;
   background-image: var(--backgroundImage);
   text-shadow: var(--textShadow);
   background-repeat: repeat;
-  background-size:over;
+  background-size: over;
   border-radius: 100px;
   width: 90%;
   margin-left: 5%;
@@ -228,7 +272,6 @@ padding-right: 0.1%;
   padding-right: 3%;
   padding-top: 6%;
 }
-
 
 .formBox input {
   margin-bottom: 1.5%;
@@ -262,15 +305,11 @@ footer {
   grid-row: 2 / 3;
   display: grid;
   grid-template: 19% 19% 19% 19% 19% / 24% 24% 24% 24%;
-  grid-template-areas:
-    ". pf pf ."
-    "one two three four"
-    "five six seven eight"
-    "nine zer smt clr";
+  grid-template-areas: ". pf pf ." "one two three four" "five six seven eight" "nine zer smt clr";
   background-image: var(--backgroundImage);
   background-size: cover;
-    border-radius: 8px;
-    box-shadow: var(--introshadow);
+  border-radius: 8px;
+  box-shadow: var(--introshadow);
 }
 
 .btns {
@@ -379,114 +418,454 @@ footer {
   /* grid-column: 4 / 5; */
 }
 
-
- @media screen and (max-width: 375px) {
-
-   #mainContent {
-   padding-bottom: 0;
- }
-
-.signInForms h2 {
-  font-size: 2vh;
-  padding-top: 20%;
-}
-.signInForms {
-grid-template: 18vh 60vh 25vh / 11% 59% 12%;
-}
-
-footer {
+@media screen and (max-width: 375px) {
+  #mainContent {
+    padding-bottom: 0;
+  }
+  .signInForms h2 {
+    font-size: 2vh;
+    padding-top: 20%;
+  }
+  .signInForms {
+    grid-template: 18vh 60vh 25vh / 11% 59% 12%;
+  }
+  footer {
     left: 0px;
     bottom: 0px;
     width: 100%;
     height: 14%;
     text-indent: 7%;
     font-size: 2vh;
-}
-
-#nav ul {
+  }
+  #nav ul {
     text-indent: -45%;
     padding-right: 17%;
-
-}
-
-.formBox input {
+  }
+  .formBox input {
     margin-bottom: 1.5%;
     background-color: white;
-}
-
-.personalGrid {
+  }
+  .personalGrid {
     display: grid;
     grid-template: 15% 50% 30% / 68%;
     grid-gap: 2%;
-}
-
-#postCreator input[type="submit"] {
+    padding-bottom: 30%;
+  }
+  #postCreator input[type="submit"] {
     position: relative;
     left: 15%;
     margin-bottom: 1%;
     background-color: white;
-}
-
-#userInfo {
-font-size: 2vh;
-padding-left: 3%;
-padding-right: 3%;
-}
-
-#personalEmail {
-  display: none;
-}
-
-#postCreator {
+  }
+  #userInfo {
+    font-size: 2vh;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  #personalEmail {
+    display: none;
+  }
+  #postCreator {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     padding-left: 17%;
   }
-
   #contentBox {
     height: 7vh;
     width: 40vw;
-}
-
-.feedGrid-columns {
+  }
+  section form input[type="search"] {
+    width: 32vh;
+  }
+  .feedGrid-columns {
     display: grid;
     grid-template-columns: 80%;
     grid-gap: 7%;
     margin-right: 4%;
+    max-width: 50%;
+    padding-bottom: 100%;
+  }
+  .events-columns {
+    width: 80%;
+  }
+  .eventsHeader {
+    width: 90%;
+  }
+  .events-rows h3 {
+    font-size: 1.5vh;
+    padding-right: 10%;
+  }
+  .events-rows {
+    font-size: 1.5vh;
+  }
+  .events-rows p {
+    display: none;
+  }
+  .events-rows img {
+    display: none;
+  }
+  .feedHeader {
+    width: 90%;
+  }
+  section form input[type="search"] {
+    width: 33vh;
+  }
+  input[type="search"] {
+    background-color: white;
+  }
+  h3 {
+    font-size: 2.75vh;
+  }
+  h2 {
+    display: none;
+  }
+  button {
+    background-color: white;
+  }
+  #container {
+    grid-template: 17vh 53vh 22vh / 0% 77% 12%;
+  }
+  #passcode input {
+    font-size: 1.75vh;
+    padding: 0.5%;
+  }
 }
 
-.feedHeader {
-    width: 63%;
+@media screen and (max-width: 376px) and (max-width: 768px) {
+  #mainContent {
+    padding-bottom: 0;
+  }
+  .signInForms h2 {
+    font-size: 2vh;
+    padding-top: 20%;
+  }
+  .signInForms {
+    grid-template: 18vh 60vh 25vh / 11% 59% 12%;
+  }
+  footer {
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 14%;
+    text-indent: 7%;
+    font-size: 2vh;
+  }
+  #nav ul {
+    text-indent: -45%;
+    padding-right: 17%;
+  }
+  .formBox input {
+    margin-bottom: 1.5%;
+    background-color: white;
+  }
+  .personalGrid {
+    display: grid;
+    grid-template: 15% 50% 30% / 68%;
+    grid-gap: 2%;
+    padding-bottom: 30%;
+  }
+  #postCreator input[type="submit"] {
+    position: relative;
+    left: 15%;
+    margin-bottom: 1%;
+    background-color: white;
+  }
+  #userInfo {
+    font-size: 2vh;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  #personalEmail {
+    display: none;
+  }
+  #postCreator {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    padding-left: 17%;
+  }
+  #contentBox {
+    height: 7vh;
+    width: 40vw;
+  }
+  section form input[type="search"] {
+    width: 32vh;
+  }
+  .feedGrid-columns {
+    display: grid;
+    grid-template-columns: 80%;
+    grid-gap: 7%;
+    margin-right: 4%;
+    max-width: 50%;
+    padding-bottom: 100%;
+  }
+  .events-columns {
+    width: 80%;
+  }
+  .eventsHeader {
+    width: 90%;
+  }
+  .events-rows h3 {
+    font-size: 1.5vh;
+    padding-right: 10%;
+  }
+  .events-rows {
+    font-size: 1.5vh;
+  }
+  .events-rows p {
+    display: none;
+  }
+  .events-rows img {
+    display: none;
+  }
+  .feedHeader {
+    width: 90%;
+  }
+  section form input[type="search"] {
+    width: 33vh;
+  }
+  input[type="search"] {
+    background-color: white;
+  }
+  h3 {
+    font-size: 2.75vh;
+  }
+  h2 {
+    display: none;
+  }
+  button {
+    background-color: white;
+  }
+  #container {
+    grid-template: 17vh 53vh 22vh / 0% 77% 12%;
+  }
+  #passcode input {
+    font-size: 1.75vh;
+    padding: 0.5%;
+  }
 }
 
-input[type="search"] {
-background-color: white;
+@media screen and (max-width: 789px) and (max-width: 1024px) {
+  #mainContent {
+    padding-bottom: 0;
+  }
+  .signInForms h2 {
+    font-size: 2vh;
+    padding-top: 20%;
+  }
+  .signInForms {
+    grid-template: 18vh 60vh 25vh / 11% 59% 12%;
+  }
+  footer {
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 14%;
+    text-indent: 7%;
+    font-size: 2vh;
+  }
+  #nav ul {
+    text-indent: -45%;
+    padding-right: 17%;
+  }
+  .formBox input {
+    margin-bottom: 1.5%;
+    background-color: white;
+  }
+  .personalGrid {
+    display: grid;
+    grid-template: 15% 50% 30% / 68%;
+    grid-gap: 2%;
+    padding-bottom: 30%;
+  }
+  #postCreator input[type="submit"] {
+    position: relative;
+    left: 15%;
+    margin-bottom: 1%;
+    background-color: white;
+  }
+  #userInfo {
+    font-size: 2vh;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  #personalEmail {
+    display: none;
+  }
+  #postCreator {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    padding-left: 17%;
+  }
+  #contentBox {
+    height: 7vh;
+    width: 40vw;
+  }
+  section form input[type="search"] {
+    width: 32vh;
+  }
+  .feedGrid-columns {
+    display: grid;
+    grid-template-columns: 80%;
+    grid-gap: 7%;
+    margin-right: 4%;
+    max-width: 50%;
+    padding-bottom: 100%;
+  }
+  .events-columns {
+    width: 80%;
+  }
+  .eventsHeader {
+    width: 90%;
+  }
+  .events-rows h3 {
+    font-size: 1.5vh;
+    padding-right: 10%;
+  }
+  .events-rows {
+    font-size: 1.5vh;
+  }
+  .events-rows p {
+    display: none;
+  }
+  .events-rows img {
+    display: none;
+  }
+  .feedHeader {
+    width: 90%;
+  }
+  section form input[type="search"] {
+    width: 33vh;
+  }
+  input[type="search"] {
+    background-color: white;
+  }
+  h3 {
+    font-size: 2.75vh;
+  }
+  h2 {
+    display: none;
+  }
+  button {
+    background-color: white;
+  }
+  #container {
+    grid-template: 17vh 53vh 22vh / 0% 77% 12%;
+  }
+  #passcode input {
+    font-size: 1.75vh;
+    padding: 0.5%;
+  }
 }
 
-h2 {
-  display: none;
+@media screen and (max-width: 1025px) and (max-width: 1440px) {
+  #mainContent {
+    padding-bottom: 0;
+  }
+  .signInForms h2 {
+    font-size: 2vh;
+    padding-top: 20%;
+  }
+  .signInForms {
+    grid-template: 18vh 60vh 25vh / 11% 59% 12%;
+  }
+  footer {
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 14%;
+    text-indent: 7%;
+    font-size: 2vh;
+  }
+  #nav ul {
+    text-indent: -45%;
+    padding-right: 17%;
+  }
+  .formBox input {
+    margin-bottom: 1.5%;
+    background-color: white;
+  }
+  .personalGrid {
+    display: grid;
+    grid-template: 15% 50% 30% / 68%;
+    grid-gap: 2%;
+    padding-bottom: 30%;
+  }
+  #postCreator input[type="submit"] {
+    position: relative;
+    left: 15%;
+    margin-bottom: 1%;
+    background-color: white;
+  }
+  #userInfo {
+    font-size: 2vh;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  #personalEmail {
+    display: none;
+  }
+  #postCreator {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    padding-left: 17%;
+  }
+  #contentBox {
+    height: 7vh;
+    width: 40vw;
+  }
+  section form input[type="search"] {
+    width: 32vh;
+  }
+  .feedGrid-columns {
+    display: grid;
+    grid-template-columns: 80%;
+    grid-gap: 7%;
+    margin-right: 4%;
+    max-width: 50%;
+    padding-bottom: 100%;
+  }
+  .events-columns {
+    width: 80%;
+  }
+  .eventsHeader {
+    width: 90%;
+  }
+  .events-rows h3 {
+    font-size: 1.5vh;
+    padding-right: 10%;
+  }
+  .events-rows {
+    font-size: 1.5vh;
+  }
+  .events-rows p {
+    display: none;
+  }
+  .events-rows img {
+    display: none;
+  }
+  .feedHeader {
+    width: 90%;
+  }
+  section form input[type="search"] {
+    width: 33vh;
+  }
+  input[type="search"] {
+    background-color: white;
+  }
+  h3 {
+    font-size: 2.75vh;
+  }
+  h2 {
+    display: none;
+  }
+  button {
+    background-color: white;
+  }
+  #container {
+    grid-template: 17vh 53vh 22vh / 0% 77% 12%;
+  }
+  #passcode input {
+    font-size: 1.75vh;
+    padding: 0.5%;
+  }
 }
-
-button {
-  background-color: white;
-}
-
-}
-
- @media screen and (max-width: 376px) and (max-width: 768px) {
- /* html {
-   opacity: 0.5;
- } */
- }
-
- @media screen and (max-width: 789px) and (max-width: 1024px) {
- /* html {
-   opacity: 0.5;
- } */
- }
-
- @media screen and (max-width: 1025px) and (max-width: 1440px) {
- /* html {
-   opacity: 0.5;
- } */
- }
