@@ -505,6 +505,7 @@ section form input[type="search"] {
     grid-template-rows: auto;
     padding: 3%;
     text-align: center;
+    word-break: break-all;
   }
 
   .feedGrid-rows img {
@@ -519,6 +520,7 @@ section form input[type="search"] {
   #searchSub {
     background-color: white;
   }
+
   /* Events Page */
 
   .events-columns {
@@ -533,11 +535,13 @@ section form input[type="search"] {
     grid-template-rows: auto;
     padding: 4%;
     text-align: center;
+    word-break: break-all;
   }
 
   .events-rows img {
     display: none;
   }
+
 
   /* Form Pages */
 
@@ -694,6 +698,7 @@ and (max-device-width : 736px) { /* Layout */
     grid-template-rows: auto;
     padding: 3%;
     text-align: center;
+    word-break: break-all;
   }
 
   .feedGrid-rows img {
@@ -722,11 +727,13 @@ and (max-device-width : 736px) { /* Layout */
     grid-template-rows: auto;
     padding: 4%;
     text-align: center;
+    word-break: break-all;
   }
 
   .events-rows img {
     display: none;
   }
+
 
   /* Form Pages */
 
