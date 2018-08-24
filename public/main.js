@@ -9,10 +9,7 @@ function changeText(x) {
   if (x == "1") {
     textInfo.innerHTML = "Welcome to Top Secret! We are heroes from Universe <i>616</i>. Though we do appreciate heroes from any universe to join us. Sign up, and sign in and post to our feed and if you can figure out the combination, join us on our events.";
 }  if (x == "2") {
-  textInfo.innerHTML = "<p>Created by Bemilton Suero</p>
-  <p><a href='https://github.com/bemsuero'>GitHub</a></p><br>
-  <p><a href='https://www.linkedin.com/in/bemilton-suero/'>Linkedin</a></p><br>
-  <p><a href='https://ko-fi.com/milesmorales'>Ko-Fi</a></p><br>";
+  textInfo.innerHTML = "<p>Created by Bemilton Suero</p> <p><a href='https://github.com/bemsuero'>GitHub</a></p><br> <p><a href='https://www.linkedin.com/in/bemilton-suero/'>Linkedin</a></p><br> <p><a href='https://ko-fi.com/milesmorales'>Ko-Fi</a></p><br>";
 }
 }
 
