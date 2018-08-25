@@ -1,4 +1,4 @@
-# require "sinatra"
+require "sinatra"
 require "faker"
 require "sinatra/activerecord"
 require "curb"
